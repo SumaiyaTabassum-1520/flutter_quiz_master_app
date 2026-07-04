@@ -11,7 +11,7 @@
 # Details
 
 * Home Screen - AppBar Functionalities
-    - Title: Quiz Master। 
+    - Title: Quiz Master
     - Theme Toggle Button: Light/Dark mode and Vice-Versa 
     - Persistence: After changing the theme if the app is killed, still the same theme will exist which is handled by **SharedPreferences**.
 
