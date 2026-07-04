@@ -40,8 +40,6 @@ class _QuizScreenState extends State<QuizScreen> {
     }
 
     if (_isLastQuestion) {
-      // Navigate to result screen, replacing the quiz screen so the user
-      // can't go "back" into a finished quiz.
       context.pushReplacement(
         '/result',
         extra: {
@@ -75,14 +73,11 @@ class _QuizScreenState extends State<QuizScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Question counter
               Text(
                 'Question ${_currentIndex + 1} of ${category.questions.length}',
                 style: theme.textTheme.titleMedium,
               ),
               const SizedBox(height: 10),
-
-              // Progress indicator
               ClipRRect(
                 borderRadius: BorderRadius.circular(8),
                 child: LinearProgressIndicator(
@@ -92,8 +87,6 @@ class _QuizScreenState extends State<QuizScreen> {
                 ),
               ),
               const SizedBox(height: 24),
-
-              // Question card
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(20),
@@ -123,8 +116,6 @@ class _QuizScreenState extends State<QuizScreen> {
                   },
                 ),
               ),
-
-              // Navigation button
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
