@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 import 'storage_service.dart';
 
-/// Simple ChangeNotifier-based state manager for the app's ThemeMode.
-///
-/// Loads the persisted theme on startup and writes back to SharedPreferences
-/// every time the user toggles it, satisfying the "survives full app kill"
-/// requirement from the spec.
 class ThemeController extends ChangeNotifier {
   ThemeMode _themeMode = ThemeMode.light;
   bool _isLoaded = false;
