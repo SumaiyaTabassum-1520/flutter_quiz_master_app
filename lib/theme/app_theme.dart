@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Centralized ThemeData for Light and Dark modes.
 class AppTheme {
   AppTheme._();
 
