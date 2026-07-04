@@ -1,6 +1,6 @@
 # Module 4 Assignment 
 
-## Flutter quiz app demonstrating Theme State Management, Local Persistence (SharedPreferences), Declarative Routing (GoRouter), Custom UI/UX Design, and Data Modeling with Model Classes
+### Flutter quiz app demonstrating Theme State Management, Local Persistence (SharedPreferences), Declarative Routing (GoRouter), Custom UI/UX Design, and Data Modeling with Model Classes
 
 ## Applied key concepts
     - Routing: GoRouter (Declarative Routing System)
