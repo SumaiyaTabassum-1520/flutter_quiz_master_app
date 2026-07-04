@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'question.dart';
 
-/// Represents a quiz category shown on the Home dashboard.
 class QuizCategory {
   final String id;
   final String name;
