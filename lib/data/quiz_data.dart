@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 import '../models/question.dart';
 import '../models/quiz_category.dart';
-
-/// All quiz content lives locally in this file (per assignment note:
-/// "Don't use api, handle it locally"). No network calls are made.
 class QuizData {
   QuizData._();
 
   static final List<QuizCategory> categories = [
-    QuizCategory(
+    const QuizCategory(
       id: 'sports',
       name: 'Sports',
       emoji: '🏀',
       icon: Icons.sports_basketball_rounded,
-      color: const Color(0xFFE17055),
-      questions: const [
+      color: Color(0xFFE17055),
+      questions: [
         Question(
           questionText: 'Which country won the FIFA World Cup in 2022?',
           options: ['Brazil', 'France', 'Argentina', 'Germany'],
@@ -42,13 +39,13 @@ class QuizData {
         ),
       ],
     ),
-    QuizCategory(
+    const QuizCategory(
       id: 'science',
       name: 'Science',
       emoji: '🔬',
       icon: Icons.science_rounded,
-      color: const Color(0xFF00B894),
-      questions: const [
+      color: Color(0xFF00B894),
+      questions: [
         Question(
           questionText: 'What is the chemical symbol for water?',
           options: ['H2O', 'O2', 'CO2', 'HO2'],
@@ -76,13 +73,13 @@ class QuizData {
         ),
       ],
     ),
-    QuizCategory(
+    const QuizCategory(
       id: 'technology',
       name: 'Technology',
       emoji: '💻',
       icon: Icons.memory_rounded,
-      color: const Color(0xFF0984E3),
-      questions: const [
+      color: Color(0xFF0984E3),
+      questions: [
         Question(
           questionText: 'What does "CPU" stand for?',
           options: [
@@ -125,13 +122,13 @@ class QuizData {
         ),
       ],
     ),
-    QuizCategory(
+    const QuizCategory(
       id: 'history',
       name: 'History',
       emoji: '📜',
       icon: Icons.account_balance_rounded,
-      color: const Color(0xFFFDCB6E),
-      questions: const [
+      color: Color(0xFFFDCB6E),
+      questions: [
         Question(
           questionText: 'In which year did World War II end?',
           options: ['1943', '1945', '1947', '1950'],
@@ -159,13 +156,13 @@ class QuizData {
         ),
       ],
     ),
-    QuizCategory(
+    const QuizCategory(
       id: 'gk',
       name: 'General Knowledge',
       emoji: '🧠',
       icon: Icons.psychology_rounded,
-      color: const Color(0xFF6C5CE7),
-      questions: const [
+      color: Color(0xFF6C5CE7),
+      questions: [
         Question(
           questionText: 'What is the capital city of Bangladesh?',
           options: ['Chittagong', 'Khulna', 'Dhaka', 'Sylhet'],
