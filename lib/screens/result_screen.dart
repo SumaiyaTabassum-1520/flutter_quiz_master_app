@@ -33,7 +33,6 @@ class _ResultScreenState extends State<ResultScreen> {
       correctAnswers: widget.correct,
       playedAt: DateTime.now(),
     );
-    // Persist the result as soon as this screen is shown.
     StorageService.instance.recordQuizResult(result);
   }
 
