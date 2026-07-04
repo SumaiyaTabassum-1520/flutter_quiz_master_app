@@ -5,13 +5,6 @@ import '../screens/quiz_screen.dart';
 import '../screens/result_screen.dart';
 import '../services/theme_controller.dart';
 
-/// Declarative routing table for the app, built with GoRouter.
-///
-/// Routes:
-///   /                 -> HomeScreen (Dashboard)
-///   /quiz/:categoryId -> QuizScreen for the selected category
-///   /result           -> ResultScreen (expects an `extra` map with the
-///                        quiz outcome; pushed via context.pushReplacement)
 GoRouter buildAppRouter(ThemeController themeController) {
   return GoRouter(
     initialLocation: '/',
