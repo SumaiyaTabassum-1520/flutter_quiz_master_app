@@ -1,5 +1,3 @@
-/// Represents the outcome of one completed quiz attempt.
-/// Used both for the Result screen and for persisted quiz history.
 class QuizResult {
   final String categoryName;
   final int totalQuestions;
