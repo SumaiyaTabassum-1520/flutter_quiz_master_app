@@ -1,4 +1,3 @@
-/// Represents a single multiple-choice quiz question.
 class Question {
   final String questionText;
   final List<String> options;
