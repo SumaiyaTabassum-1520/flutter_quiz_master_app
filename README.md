@@ -1,82 +1,65 @@
-# 🧠 Quiz Master
+# Module 4 Assignment 
 
-A polished, fully offline Flutter quiz application built to practice real-world app development skills: **state management, local persistence, declarative routing, custom UI/UX, and clean data modeling.**
+## Flutter quiz app demonstrating Theme State Management, Local Persistence (SharedPreferences), Declarative Routing (GoRouter), Custom UI/UX Design, and Data Modeling with Model Classes
 
-## ✨ Features
+## Applied key concepts
+    - Routing: GoRouter (Declarative Routing System)
+    - Local Storage: SharedPreferences (For persistence)
+    - State Management: State persistence for Theme Management  -(Light/Dark Mode)
+    - Architecture: Clean Code Structure (Separate UI, Models, Controllers/Services)
 
-- **🎨 Light/Dark Theme Toggle** — one-tap switch in the AppBar, persisted with `SharedPreferences` so it survives a full app restart.
-- **📊 Live Statistics Dashboard** — Total Quiz Attempts, Highest Score, and Last Score, read directly from local storage.
-- **🗂️ 5 Quiz Categories** — Sports 🏀, Science 🔬, Technology 💻, History 📜, and General Knowledge 🧠 — each with 5 questions.
-- **📝 Dynamic Quiz Flow** — question counter, animated progress bar, single-selection MCQ options with highlight feedback, and a `Next` / `Finish` button that adapts to the current question.
-- **🏆 Detailed Result Screen** — total questions, correct/wrong answers, final score, and percentage, with **Play Again** and **Back to Home** actions.
-- **🕘 Quiz History** — the last 10 results are stored locally (newest first) and shown on the dashboard.
-- **📴 100% Offline** — no API calls; all quiz content and history are handled locally.
+# Details
 
-## 🛠️ Tech Stack
+* Home Screen - AppBar Functionalities
+    - Title: Quiz Master। 
+    - Theme Toggle Button: Light/Dark mode and Vice-Versa 
+    - Persistence: After changing the theme if the app is killed, still the same theme will exist which is handled by **SharedPreferences**.
 
-| Concept | Implementation |
-|---|---|
-| Routing | [`go_router`](https://pub.dev/packages/go_router) (declarative routing) |
-| Local Storage | [`shared_preferences`](https://pub.dev/packages/shared_preferences) |
-| State Management | `ChangeNotifier` (`ThemeController`) for theme state |
-| Architecture | Clean separation: `models/`, `services/`, `data/`, `screens/`, `widgets/`, `routes/`, `theme/` |
+* Dashboard Body Sections
+    - Welcome Section: Tried to make attractive...."Welcome to Quiz Master! Test your knowledge and improve your learning skills."
+    - Statistics Section: Used custom container layout and read real time data from SharedPreferences 
+    - Total Quiz Attempts, Highest Score, Last Score has shown
+    - Categories Section: There are 5 different categories (Sports, Science, Technology, History, General Knowledge)
+    - Category Card Design: There is a icon in every category, their name and question count is visible 
+    - Interaction: After tapping it will redirect to the quiz page 
 
-## 📁 Project Structure
+* Quiz Screen
+    - Dynamic screen 
+    - Question Counter 
+    - Progress Indicator: LinearProgressIndicator is used to update 
+    - Question Card 
+    - MCQ: 4 options 
+    - Selection Behavior: User can choose only one option that will be highlighted
 
-```
-lib/
-├── main.dart                  # App entry point
-├── models/
-│   ├── question.dart          # MCQ question model
-│   ├── quiz_category.dart     # Category model
-│   └── quiz_result.dart       # Quiz attempt result model (+ JSON serialization)
-├── services/
-│   ├── storage_service.dart   # SharedPreferences wrapper (stats + history)
-│   └── theme_controller.dart # Theme state management
-├── data/
-│   └── quiz_data.dart         # All categories & questions (local, no API)
-├── screens/
-│   ├── home_screen.dart       # Dashboard: stats, categories, history
-│   ├── quiz_screen.dart       # Question flow
-│   └── result_screen.dart     # Score summary
-├── widgets/
-│   ├── category_card.dart
-│   ├── stat_card.dart
-│   └── option_tile.dart
-├── routes/
-│   └── app_router.dart        # GoRouter route table
-└── theme/
-    └── app_theme.dart         # Light & Dark ThemeData
-```
+* Navigation Buttons
+    - Next and finish button added as instructions
+  
+* Result Screen
+    - After Finishing the quiz user will show their performance summary
 
-## 🚀 Getting Started
+* Performance Metrics:
+    - Total Questions 
+    - Correct Answers 
+    - Wrong Answers 
+    - Final Score 
+    - Percentage
 
-### Prerequisites
-- Flutter SDK `>=3.3.0`
-- Dart SDK `>=3.3.0`
+* Action Buttons
+    - Play Again and Back To Home button added
 
-### Installation
+* Result History (Local Storage Tracking)
+    - SharedPreferences used properly
+    - Metrics Persistence: updated properly 
+    - Quiz History List: listed top 10 
+    - Didn't use any api, handled it locally
 
-```bash
-git clone https://github.com/<your-username>/flutter_quiz_master_app.git
+# How to run
+## 1. Clone the repository
+git clone https://github.com/SumaiyaTabassum-1520/flutter_quiz_master_app.git
 cd flutter_quiz_master_app
+
+## 2. Install dependencies
 flutter pub get
+
+## 3. Run the app
 flutter run
-```
-
-## 🧩 Key Design Decisions
-
-- **`ThemeController` (ChangeNotifier)** loads the persisted theme on startup and writes to `SharedPreferences` on every toggle, so the selected theme survives a full app kill and relaunch.
-- **`StorageService`** centralizes all `SharedPreferences` reads/writes — total attempts, highest score, last score, and a JSON-encoded list of the last 10 `QuizResult` objects (trimmed and reordered newest-first on every write).
-- **GoRouter** drives navigation declaratively: `/` → `/quiz/:categoryId` → `/result`, with the result screen receiving quiz outcome data via route `extra`, and using `pushReplacement` so users can't navigate back into a finished quiz.
-- **No backend/API** — all questions and results are handled entirely on-device, per the assignment requirement.
-
-## 📸 Screens
-
-| Home | Quiz | Result |
-|---|---|---|
-| Dashboard with stats, categories & history | Dynamic MCQ flow with progress bar | Score summary with Play Again / Back to Home |
-
-## 📄 License
-
-This project was built for educational purposes as part of a Flutter development assignment.
